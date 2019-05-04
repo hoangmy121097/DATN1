@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'store/index'
   devise_for :users
   resources :products
+  resources :abouts
   root to: 'store#index'
 
   authenticated :user do
