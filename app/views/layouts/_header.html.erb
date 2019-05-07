@@ -6,9 +6,8 @@
 				<nav class="limiter-menu-desktop container">
 					
 					<!-- Logo desktop -->		
-					<a href="#" class="logo">
-						<%= image_tag("logo-01.png") %>
-					</a>
+					      <%= link_to image_tag("logo-01.png") , root_path, class: "logo" %>
+                	
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
@@ -64,10 +63,9 @@
 							<li >
 								<a href="index.html">Tài khoản</a>
 								<ul class="sub-menu">
-									<li><a href="index.html">Sửa thông tin</a></li>
-									<li><a href="home-02.html">Đăng xuất</a></li>
+	                                <li><%= link_to "Sửa thông tin", edit_user_registration_path %></li>
+	                                <li><%= link_to "Đăng xuất", destroy_user_session_path, method: :delete %></li>
 								</ul>
-						</ul>
 				</nav>
 			</div>	
 		</div>

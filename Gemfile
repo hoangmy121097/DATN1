@@ -64,9 +64,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'font-awesome-sass', '~> 4.2.0'
-gem "jquery-slick-rails"
+gem 'jquery-slick-rails'
 gem 'sprockets'
+gem 'kaminari'
+gem 'ransack' 
+gem 'bootstrap-kaminari-views'
