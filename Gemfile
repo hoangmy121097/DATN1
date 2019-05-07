@@ -68,3 +68,5 @@ gem "font-awesome-rails"
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'font-awesome-sass', '~> 4.2.0'
+gem "jquery-slick-rails"
+gem 'sprockets'
