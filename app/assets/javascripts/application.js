@@ -18,4 +18,21 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require bootstrap
+//= require jquery.slick
+//= require slick
+//= require slick
+//= require animsition
+//= require lightbox
+//= require daterangepicker
+//= require countdowntime
+//= require isotope.pkgd.min
+//= require parallax100
+//= require perfect-scrollbar.min
+//= require sweetalert.min
+//= require select2
+//= require jquery.slick
+
+
+
+
 

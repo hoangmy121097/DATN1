@@ -16,10 +16,22 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
- */
+ *= require slick-theme
+ *= require animate
+ *= require_animsition
+ *= require daterangepicker
+ *= require hamburgers
+ *= require magnific-popup
+ *= require perfect-scrollbar
+ *= require select2
+ *= require animate
+ *= require slick
+ */         
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome-sprockets";
  @import "font-awesome";
  
+ @import 'slick';
+ @import 'slick-theme';

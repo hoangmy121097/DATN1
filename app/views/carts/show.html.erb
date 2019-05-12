@@ -8,17 +8,18 @@
         <td><%= image_tag(item.product.image_url, class: 'list_image') %>&times;</td>
         <td><%= item.quantity %>&times;</td>
         <td><%= item.product.title %></td>
-        <td class="item_price"><%= number_to_currency(item.total_price) %></td>
+        <td class="item_price"><%= item.total_price %>&nbsp;VNĐ</td>
+
+    
     </tr>
     <% end %>
     <tr class="total_line">
-        <td colspan="2">Total</td>
-        <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+        <td colspan="2">Tổng</td>
+        <td class="total_cell"><%= @cart.total_price %>&nbsp;VNĐ</td>
     </tr>
  </table>
 
 
-<%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= button_to 'Xóa giỏ hàng', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
 
-
-<%= link_to 'Back', store_index_path %>
+<%= link_to 'Trở về', root_path %>

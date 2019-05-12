@@ -3,18 +3,17 @@
   <head>
     <title>COZA Store</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('icon.png') %>
   </head>
 
   <%= render "layouts/header"%>
-  <p id="notice" >
-    <%= notice %>
-  </p>
 
-  <body class='<%= controller.controller_name %>'>
+  <body class='<%= controller.controller_name %>'>  
+    <div class="notice"><%= notice %></div>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 
