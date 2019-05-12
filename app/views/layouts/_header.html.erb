@@ -71,7 +71,11 @@
 							</li>
 
 							<li>
-								<%= link_to "Liên Hệ", abouts_path%>
+								<%= link_to "Thông Tin", abouts_path%>
+							</li>
+
+							<li>
+								<%= link_to "Liên Hệ", contacts_path%>
 							</li>
 						</ul>
 					</div>	
@@ -101,8 +105,8 @@
 							<li class="active-menu">
 								<a href="index.html">Tài khoản</a>
 								<ul class="sub-menu">
-									<li><a href="index.html">Sửa thông tin</a></li>
-									<li><a href="home-02.html">Đăng xuất</a></li>
+									<li><%= link_to "Sửa Thông Tin", edit_user_registration_path %></li>
+									<li><%= link_to "Đăng Xuất", destroy_user_session_path ,method: :delete%></li>
 								</ul>
 						</ul>
 				</nav>

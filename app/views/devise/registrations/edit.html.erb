@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<!--<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -41,3 +41,92 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+-->
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+       <form class="login100-form validate-form">
+        <span class="login100-form-title">
+          <b>Sửa Thông Tin Người Dùng</b>
+        </span>
+       
+
+        <div class="wrap-input100 validate-input">
+          <span class="focus-input100" ></span>
+            <%= f.label :email %><br />
+            <div class="input_login"><%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+
+
+        <div class="wrap-input100 validate-input">
+          <span class="focus-input100"></span>
+          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+          <div class="input_login"><%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+
+
+
+        <div class="wrap-input100 validate-input">
+          <span class="focus-input100"></span>
+          <%= f.label :password_confirmation %>
+          <i>
+            <% if @minimum_password_length %>
+              <em><%= @minimum_password_length %> characters minimum</em>
+            <% end %>
+          </i>
+          <div class="input_login"><%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+         
+        </div>
+
+        <div class="wrap-input100 validate-input">
+          <span class="focus-input100"></span>
+          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+          <div class="input_login"><%= f.password_field :current_password, autocomplete: "current-password" %>
+        </div><br/>
+      
+        <div class="container-login100-form-btn">
+          <%= f.submit "Update" , class:"login100-form-btn" %>
+        </div>
+       
+        </form>
+        </div>
+        </div>
+        </div>
+       
+      <div>
+        <h3>Cancel my account</h3>
+
+        <p>Unhappy?</p>
+        <br/>
+        <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete , style: "margin: -20px"%>
+
+        <%= link_to "Back", :back %>
+        </div>
+          </div>
+         </div>
+        </div>
+      <% end %>
+
+
+
+  
+
+       
+
+
+
+       
+  
+      
+       
+			
+      
+      
+
+     
+      

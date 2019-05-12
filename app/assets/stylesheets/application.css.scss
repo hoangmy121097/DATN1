@@ -1,4 +1,6 @@
 
+ /*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -16,5 +18,8 @@
  *= require font-awesome
  */
 
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
  @import "font-awesome-sprockets";
  @import "font-awesome";
+ 
