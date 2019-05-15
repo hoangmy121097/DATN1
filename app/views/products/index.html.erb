@@ -1,21 +1,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>Home</title>
-<!--===============================================================================================-->	
-<%= stylesheet_link_tag "/fonts/font-awesome-4.7.0/css/font-awesome.min.css" %>
-<%= stylesheet_link_tag "/fonts/linearicons-v1.0.0/icon-font.min.css" %> 
-<%= stylesheet_link_tag "/stylesheets/animate.css" %> 
-<%= stylesheet_link_tag "/stylesheets/hamburgers.min.css" %> 
-<%= stylesheet_link_tag "/stylesheets/animsition.min.css" %> 
-<%= stylesheet_link_tag "/stylesheets/slick.scss" %> 
-<%= stylesheet_link_tag "/stylesheets/slick.css" %> 
-<%= stylesheet_link_tag "/stylesheets/magnific-popup.css" %> 
-<%= stylesheet_link_tag "/stylesheets/main.css" %> 
-<%= stylesheet_link_tag '/stylesheets/util.css' %> 
-<!--===============================================================================================-->
-</head>
 
 <% if user_signed_in? %>
 <%= link_to "Edit profile", edit_user_registration_path %> |
@@ -311,15 +296,7 @@
 	</section>
 
 
-	
 
-
-	<!-- Back to top -->
-	<div class="btn-back-to-top" id="myBtn">
-		<span class="symbol-btn-back-to-top">
-			<i class="zmdi zmdi-chevron-up"></i>
-		</span>
-	</div>
 
 	<!-- Modal1 -->
 	<div class="wrap-modal1 js-modal1 p-t-60 p-b-20">

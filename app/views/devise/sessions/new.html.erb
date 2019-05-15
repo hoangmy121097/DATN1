@@ -78,8 +78,12 @@
 
           <% if devise_mapping.rememberable? %>
           <div class="rememberme">
+          <div class= "flex-col-l-m cl2">
             <%= f.check_box :remember_me %>
+            </div>
+            <div class = "flex-col-l-m">
             <%= f.label :remember_me %>
+            </div>
           </div>
         <% end %>
     
