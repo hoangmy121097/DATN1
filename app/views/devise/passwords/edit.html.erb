@@ -46,17 +46,20 @@
             </div>
 
             <div class="wrap-input100 validate-input" >
-              
+              <%= f.label :Mật_Khẩu_Mới %>
                 <%= f.password_field :password, autofocus: true, autocomplete: "new-password", placeholder: "New password", class:"input100" %>  
             </div>
            
             <div class="wrap-input100 validate-input" >
-              <span class="focus-input100"></span>     
-                <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm password", class:"input100" %>  
+              <span class="focus-input100"></span>  
+              <%= f.label :xác_nhận_Mật_Khẩu_Mới %>   
+                <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm password", class:"input100" %>
+                <br/>
             </div>
-                 
+
             <div class="container-login100-form-btn">
-              <%= f.submit "Save", class:"login100-form-btn" %>
+          
+              <%= f.submit "Lưu", class:"login100-form-btn" %>
             </div>
 
            </form>
