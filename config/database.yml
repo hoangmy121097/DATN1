@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: testdoan
+  database: test1
   username: mylth
   password: 123456
   host: localhost
