@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Bills</h1>
+<h1>Hoá đơn</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Delivery date</th>
-      <th>Status pay</th>
+      <th>Ngày giao hàng</th>
+      <th>Tình trạng trả tiền</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= bill.customer_id %></td>
         <td><%= bill.status_pay %></td>
-        <td><%= link_to 'Show', bill %></td>
-        <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
-        <td><%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Hiển thị', bill %></td>
+        <td><%= link_to 'Sửa', edit_bill_path(bill) %></td>
+        <td><%= link_to 'Xoá', bill, method: :delete, data: { confirm: 'Bạn có chắc?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,5 +26,5 @@
 
 <br>
 
-<%= link_to 'New Bill', new_bill_path %>
+<%= link_to 'Hoá đơn mới', new_bill_path %>
 

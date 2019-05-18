@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Delivery date:</strong>
+  <strong>Ngày giao hàng:</strong>
   <%= @bill.delivery_date %>
 </p>
 
 <p>
-  <strong>Status pay:</strong>
+  <strong>Tình trạng trả tiền:</strong>
   <%= @bill.status_pay %>
 </p>
 
-<%= link_to 'Edit', edit_bill_path(@bill) %> |
-<%= link_to 'Back', bills_path %>
+<%= link_to 'Sửa', edit_bill_path(@bill) %> |
+<%= link_to 'Trở lại', bills_path %>

@@ -1,41 +1,12 @@
-<!--<h2>Change your password</h2>
-
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <%= f.hidden_field :reset_password_token %>
-
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
--->
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.hidden_field :reset_password_token %>
+<%= f.hidden_field :reset_password_token %>
   <div class="limiter">
-      <div class="container-login100">
-        <div class="wrap-login100">
-           <form class="login100-form validate-form">
-            <span class="login100-form-title">
-              <b>TẠO MẬT KHẨU MỚI</b>
-            </span>
-
-            <div class="textwarning">
+    <div class="container-login100">
+      <div class="wrap-login100">
+      <form class="login100-form validate-form">
+        <span class="login100-form-title"><b>TẠO MẬT KHẨU MỚI</b>
+        </span>
+          <div class="textwarning">
               <%= render "devise/shared/error_messages", resource: resource %>
               <p class="alert"><%= alert %></p>
               <p class="notice"><%= notice %></p>
@@ -43,16 +14,16 @@
                 <%# if @minimum_password_length %>
                   <!--<em><%= @minimum_password_length %> characters minimum</em><br /> -->
                 <%# end %>   
-            </div>
+          </div>
 
-            <div class="wrap-input100 validate-input" >
-              <%= f.label :Mật_Khẩu_Mới %>
-                <%= f.password_field :password, autofocus: true, autocomplete: "new-password", placeholder: "New password", class:"input100" %>  
-            </div>
+          <div class="wrap-input100 validate-input" >
+            <%= f.label :password,'Mật Khẩu Mới' %>
+            <%= f.password_field :password, autofocus: true, autocomplete: "new-password", placeholder: "New password", class:"input100" %>  
+          </div>
            
             <div class="wrap-input100 validate-input" >
               <span class="focus-input100"></span>  
-              <%= f.label :xác_nhận_Mật_Khẩu_Mới %>   
+              <%= f.label :password_confirmation, 'Xác nhận Mật Khẩu Mới' %>   
                 <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm password", class:"input100" %>
                 <br/>
             </div>
@@ -66,4 +37,4 @@
         </div>
       </div>
     </div>
-  <% end %>
+<% end %>

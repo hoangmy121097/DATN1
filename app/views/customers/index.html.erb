@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Customers</h1>
+<h1>Khách hàng</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Customer name</th>
-      <th>Customer address</th>
-      <th>Customer phone</th>
-      <th>Customer birthday</th>
+      <th>Tên khách hàng</th>
+      <th>Địa chỉ khách hàng</th>
+      <th>Điện thoại khách hàng</th>
+      <th>Ngày sinh khách hàng</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,9 +20,9 @@
         <td><%= customer.customer_address %></td>
         <td><%= customer.customer_phone %></td>
         <td><%= customer.customer_birthday %></td>
-        <td><%= link_to 'Show', customer %></td>
-        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Hiển thị', customer %></td>
+        <td><%= link_to 'Sửa', edit_customer_path(customer) %></td>
+        <td><%= link_to 'Xoá', customer, method: :delete, data: { confirm: 'Bạn có chắc?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Customer', new_customer_path %>
+<%= link_to 'Khách hàng mới', new_customer_path %>

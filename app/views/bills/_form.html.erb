@@ -1,7 +1,7 @@
 <%= form_with(model: bill, local: true) do |form| %>
   <% if bill.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(bill.errors.count, "error") %> prohibited this bill from being saved:</h2>
+      <h2><%= pluralize(bill.errors.count, "error") %> Hoá đơn này không thể lưu:</h2>
 
       <ul>
       <% bill.errors.full_messages.each do |message| %>
@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :delivery_date %>
+    <%= form.label :delivery_date, 'Ngày giao hàng'%>
     <%= form.date_select :delivery_date %>
   </div>
 
   <div class="field">
-    <%= form.label :status_pay %>
+    <%= form.label :status_pay, 'Tình trạng trả tiền' %>
     <%= form.text_area :status_pay %>
   </div>
 
