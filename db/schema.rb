@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_05_135208) do
+ActiveRecord::Schema.define(version: 2019_05_18_151842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,17 @@ ActiveRecord::Schema.define(version: 2019_05_05_135208) do
   create_table "abouts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "bills", force: :cascade do |t|
+    t.text "customer_name"
+    t.text "customer_address"
+    t.text "customer_phone"
+    t.datetime "delivery_date"
+    t.text "status_pay"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email"
   end
 
   create_table "carts", force: :cascade do |t|
@@ -36,6 +47,8 @@ ActiveRecord::Schema.define(version: 2019_05_05_135208) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "quantity", default: 1
+    t.bigint "bill_id"
+    t.index ["bill_id"], name: "index_line_items_on_bill_id"
     t.index ["cart_id"], name: "index_line_items_on_cart_id"
     t.index ["product_id"], name: "index_line_items_on_product_id"
   end
@@ -63,6 +76,7 @@ ActiveRecord::Schema.define(version: 2019_05_05_135208) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "line_items", "bills"
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "products"
 end

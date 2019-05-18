@@ -1,0 +1,47 @@
+<%= form_with(model: bill, local: true) do |form| %>
+  <% if bill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bill.errors.count, "error") %> prohibited this bill from being saved:</h2>
+
+      <ul>
+      <% bill.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <b>Tên</b>
+    <%= form.text_field :customer_name, size: 40, class: "khung" %>
+  </div>
+
+  <div class="field">
+    <b>Địa chỉ</b>
+    <%= form.text_area :customer_address, rows: 3, cols: 40, class: "khung" %>
+  </div>
+
+  <div class="field">
+    <b>Số điện thoại</b>
+    <%= form.text_area :customer_phone, class: "khung" %>
+  </div>
+
+  <div class="field">
+    <b>Email</b>
+    <%= form.email_field :email, class: "khung" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :delivery_date %>
+    <%= form.datetime_select :delivery_date, class: "khung" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status_pay %>
+    <%= form.text_area :status_pay, class: "khung" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

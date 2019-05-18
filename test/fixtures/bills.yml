@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer_name: MyText
+  customer_address: MyText
+  customer_phone: MyText
+  delivery_date: 2019-05-18 21:22:19
+  status_pay: MyText
+
+two:
+  customer_name: MyText
+  customer_address: MyText
+  customer_phone: MyText
+  delivery_date: 2019-05-18 21:22:19
+  status_pay: MyText
