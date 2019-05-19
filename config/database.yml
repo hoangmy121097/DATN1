@@ -23,8 +23,8 @@ default: &default
 
 development:
   <<: *default
-  database: text
-  username: quynhlm
+  database: my_db
+  username: phuongth
   password: 123456
   host: localhost
   port: 5432
