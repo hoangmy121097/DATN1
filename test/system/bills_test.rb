@@ -14,7 +14,11 @@ class BillsTest < ApplicationSystemTestCase
     visit bills_url
     click_on "New Bill"
 
+    fill_in "Customer address", with: @bill.customer_address
+    fill_in "Customer name", with: @bill.customer_name
+    fill_in "Customer phone", with: @bill.customer_phone
     fill_in "Delivery date", with: @bill.delivery_date
+    fill_in "Email", with: @bill.email
     fill_in "Status pay", with: @bill.status_pay
     click_on "Create Bill"
 
@@ -26,7 +30,11 @@ class BillsTest < ApplicationSystemTestCase
     visit bills_url
     click_on "Edit", match: :first
 
+    fill_in "Customer address", with: @bill.customer_address
+    fill_in "Customer name", with: @bill.customer_name
+    fill_in "Customer phone", with: @bill.customer_phone
     fill_in "Delivery date", with: @bill.delivery_date
+    fill_in "Email", with: @bill.email
     fill_in "Status pay", with: @bill.status_pay
     click_on "Update Bill"
 

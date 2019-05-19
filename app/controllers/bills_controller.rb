@@ -3,6 +3,7 @@ class BillsController < ApplicationController
   before_action :set_cart, only: [:new, :create]
   before_action :ensure_cart_isnt_empty, only: :new
   before_action :set_bill, only: [:show, :edit, :update, :destroy]
+
   # GET /bills
   # GET /bills.json
   def index
@@ -74,13 +75,13 @@ class BillsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bill_params
-      params.require(:bill).permit(:delivery_date, :status_pay)
+      params.require(:bill).permit(:customer_name, :customer_address, :customer_phone, :email, :delivery_date, :status_pay)
     end
 
     private
     def ensure_cart_isnt_empty
       if @cart.line_items.empty?
-      redirect_to store_index_url, notice: 'Your cart is empty'
+        redirect_to store_index_url, notice: 'Giỏ hàng của bạn trống!'
       end
     end
 end

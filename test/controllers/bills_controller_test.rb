@@ -17,7 +17,7 @@ class BillsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create bill" do
     assert_difference('Bill.count') do
-      post bills_url, params: { bill: { delivery_date: @bill.delivery_date, status_pay: @bill.status_pay } }
+      post bills_url, params: { bill: { customer_address: @bill.customer_address, customer_name: @bill.customer_name, customer_phone: @bill.customer_phone, delivery_date: @bill.delivery_date, email: @bill.email, status_pay: @bill.status_pay } }
     end
 
     assert_redirected_to bill_url(Bill.last)
@@ -34,7 +34,7 @@ class BillsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update bill" do
-    patch bill_url(@bill), params: { bill: { delivery_date: @bill.delivery_date, status_pay: @bill.status_pay } }
+    patch bill_url(@bill), params: { bill: { customer_address: @bill.customer_address, customer_name: @bill.customer_name, customer_phone: @bill.customer_phone, delivery_date: @bill.delivery_date, email: @bill.email, status_pay: @bill.status_pay } }
     assert_redirected_to bill_url(@bill)
   end
 

@@ -64,4 +64,17 @@ class CartsController < ApplicationController
       logger.error "Attempt to access invalid cart #{params[:id]}"
       redirect_to store_index_url, notice: 'Invalid cart'
     end
+
+    def remove_from_cart
+      begin
+        product = Product.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        logger.error("Attemptccess invalid product #{params[:id]}")
+        redirect_to_index("Invalid product" )
+      else
+        @cart = Order.find(find_or_make_cart)
+        @current_line = @cart.remove_product(product)
+        redirect_to_index unless request.xhr?
+      end
+    end
 end

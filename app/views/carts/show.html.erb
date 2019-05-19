@@ -7,7 +7,7 @@
 							<table class="table-shopping-cart">
 								<tr class="table_head">
 									<th class="column-1">Sản phẩm</th>
-									<th class="column-2"></th>
+									<th class="column-2">Mô tả</th>
 									<th class="column-3">Giá</th>
 									<th class="column-4">Số lượng</th>
 									<th class="column-5">Tổng cộng</th>
@@ -64,7 +64,7 @@
 				<div class="col-sm-10 col-lg-7 col-xl-5 m-lr-auto m-b-50">
 					<div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm">
 						<h4 class="mtext-109 cl2 p-b-30">
-							Tổng số giỏ hàng
+							Tổng tiền
 						</h4>
 
 						<div class="flex-w flex-t bor12 p-b-13">
@@ -84,7 +84,7 @@
 						<div class="flex-w flex-t bor12 p-t-15 p-b-30">
 							<div class="size-208 w-full-ssm">
 								<span class="stext-110 cl2">
-									Đang chuyển hàng:
+									Phí vận chuyển:
 								</span>
 							</div>
 
@@ -117,13 +117,14 @@
 									
 									<div class="flex-w">
 										<div class="flex-c-m stext-101 cl2 size-115 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer">
-											Cập nhật tổng thể
+											Cập nhật tổng tiền
 										</div>
 									</div>
 										
 								</div>
 							</div>
 						</div>
+						<%= button_to "Thanh toán", new_bill_path, method: :get%>
 
 						<div class="flex-w flex-t p-t-27 p-b-33">
 							<div class="size-208">
@@ -134,16 +135,47 @@
 
 							<div class="size-209 p-t-1">
 								<span class="mtext-110 cl2">
-									1.855.000 VNĐ
+									$79.65
 								</span>
 							</div>
 						</div>
-
-						<button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-							Tiến hành kiểm tra
-						</button>
+						
+					
+                        
+                        <%= button_to "Thanh toán", new_bill_path, method: :get, class: "flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer" %>
+						
 					</div>
 				</div>
 			</div>
 		</div>
 	</form>
+
+
+<p id="notice"><%= notice %></p>
+
+<h2>Your Cart</h2>
+<table>
+    <% @cart.line_items.each do |item| %>
+    <tr>
+    
+        <td><%= image_tag(item.product.image_url, class: 'list_image') %>&times;</td>
+        <td><%= item.quantity %>&times;</td>
+        <td><%= item.product.title %></td>
+        <td class="item_price"><%= item.total_price %>&nbsp;VNĐ</td>
+        <td>
+		
+	</td>
+
+    
+    </tr>
+    <% end %>
+    <tr class="total_line">
+        <td colspan="2">Tổng</td>
+        <td class="total_cell"><%= @cart.total_price %>&nbsp;VNĐ</td>
+    </tr>
+ </table>
+
+<%= button_to "Thanh toán", new_bill_path, method: :get %>
+<%= button_to 'Xóa giỏ hàng', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<%= link_to 'Trở về', root_path %>

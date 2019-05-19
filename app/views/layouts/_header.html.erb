@@ -65,16 +65,17 @@
 					</div>		
 				</div>
 
-				<ul class="main-menu p-l-5">
-					<li >
-						<a href="index.html">Tài khoản</a>
-						<ul class="sub-menu">
-							<li><%= link_to "Sửa Thông Tin", edit_user_registration_path %></li>
-							<li><%= link_to "Đăng Xuất", destroy_user_session_path ,method: :delete%></li>
-						</ul>
-			</nav>
-		</div>	
-	</div>
+					<ul class="main-menu p-l-5">
+							<li >
+								<a>Tài khoản</a>
+								<ul class="sub-menu">
+									<li><%= link_to "Sửa Thông Tin", edit_user_registration_path %></li>
+									<li><%= link_to "Đăng Xuất", destroy_user_session_path ,method: :delete%></li>
+								</ul>
+							</li>
+				</nav>
+			</div>	
+		</div>
 
 
 		<!-- Header Mobile -->

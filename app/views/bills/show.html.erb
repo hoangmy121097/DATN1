@@ -1,14 +1,34 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Ngày giao hàng:</strong>
+  <strong>Customer name:</strong>
+  <%= @bill.customer_name %>
+</p>
+
+<p>
+  <strong>Customer address:</strong>
+  <%= @bill.customer_address %>
+</p>
+
+<p>
+  <strong>Customer phone:</strong>
+  <%= @bill.customer_phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @bill.email %>
+</p>
+
+<p>
+  <strong>Delivery date:</strong>
   <%= @bill.delivery_date %>
 </p>
 
 <p>
-  <strong>Tình trạng trả tiền:</strong>
+  <strong>Status pay:</strong>
   <%= @bill.status_pay %>
 </p>
 
-<%= link_to 'Sửa', edit_bill_path(@bill) %> |
-<%= link_to 'Trở lại', bills_path %>
+<%= link_to 'Edit', edit_bill_path(@bill) %> |
+<%= link_to 'Back', bills_path %>

@@ -1,85 +1,5 @@
 	<!-- Header -->
 
-	<!-- Slider -->
-	<div class="section-slide">
-		<div class="wrap-slick1">
-			<div class="slick1">
-				<div class="item-slick1" style="background-image: url(assets/slide-01.jpg);">
-					<div class="container h-full">
-						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
-							<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
-								<span class="ltext-101 cl2 respon2">
-									Bộ sưu tập nữ 2018
-								</span>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
-								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-									MÙA MỚI
-								</h2>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
-								<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Mua ngay
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="item-slick1" style="background-image: url(assets/slide-02.jpg);">
-					<div class="container h-full">
-						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
-							<div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
-								<span class="ltext-101 cl2 respon2">
-									Nam Mùa Mới
-								</span>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="lightSpeedIn" data-delay="800">
-								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-									Áo khoác và áo khoác lông
-								</h2>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
-								<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Mua ngay
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="item-slick1" style="background-image: url(assets/slide-03.jpg);">
-					<div class="container h-full">
-						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
-							<div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
-								<span class="ltext-101 cl2 respon2">
-									Bộ sưu tập nam 2018
-								</span>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="rotateInUpRight" data-delay="800">
-								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-									Sản phẩm mới
-								</h2>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-								<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Mua ngay
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
 	<!-- Banner -->
 	<div class="sec-banner bg0 p-t-80 p-b-50">
 		<div class="container">
@@ -386,10 +306,7 @@
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 						<%= image_tag(product.image_url, class: 'list_image')%>
-
-                            <%= link_to "Xem Ngay", product, class: 'block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1'  %>
-                            
-                            
+                            <%= button_to 'Thêm vào giỏ hàng', line_items_path(product_id: product),:remote => true, class: 'block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1' %>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -3689,13 +3606,14 @@
 <% cache @products do %>
     <% @products.each do |product| %>
         <% cache @products do %>
+            
             <div class="entry">
                 <%= image_tag(product.image_url, class: 'list_image') %>
                 <h3><%= link_to product.title, product %></h3><br/>
                 <%= sanitize(product.description) %>
                 <div class="price_line">
                     <span class="price"><%= number_to_currency(product.price) %></span>
-                    <%= button_to 'Thêm vào giỏ hàng', line_items_path(product_id: product) %>
+                    <%= button_to 'Thêm vào giỏ hàng', line_items_path(product_id: product),:remote => true %>
                 </div>
             </div>
         <% end %>
