@@ -21,6 +21,12 @@ ActiveRecord::Schema.define(version: 2019_05_18_172214) do
   end
 
   create_table "bills", force: :cascade do |t|
+    t.date "delivery_date"
+    t.text "status_pay"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "customer_id"
+    t.index ["customer_id"], name: "index_bills_on_customer_id"
     t.text "customer_name"
     t.text "customer_address"
     t.text "customer_phone"
@@ -64,7 +70,7 @@ ActiveRecord::Schema.define(version: 2019_05_18_172214) do
 
   create_table "products", force: :cascade do |t|
     t.string "title"
-    t.text "description"
+    t.text "description"s
     t.text "size"
     t.text "color"
     t.string "image_url"
@@ -85,6 +91,7 @@ ActiveRecord::Schema.define(version: 2019_05_18_172214) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bills", "customers"
   add_foreign_key "line_items", "bills"
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "products"
