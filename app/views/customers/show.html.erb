@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tên khách hàng:</strong>
+  <%= @customer.customer_name %>
+</p>
+
+<p>
+  <strong>Địa chỉ của khách hàng:</strong>
+  <%= @customer.customer_address %>
+</p>
+
+<p>
+  <strong>Điện thoại khách hàng:</strong>
+  <%= @customer.customer_phone %>
+</p>
+
+<p>
+  <strong>Sinh nhật khách hàng:</strong>
+  <%= @customer.customer_birthday %>
+</p>
+
+<%= link_to 'Sửa', edit_customer_path(@customer) %> |
+<%= link_to 'Trở lại', customers_path %>

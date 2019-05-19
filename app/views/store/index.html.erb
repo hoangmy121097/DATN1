@@ -1,5 +1,307 @@
-
     <!-- Header -->
+    <header class="header-v2">
+
+	<!-- Product Switcher -->
+	<!--<div class="product-switcher pull-left">
+		<a href="#" title="Select a Product">Coza Store <span class="badge">Template</span></a>
+	</div> -->
+
+	<!-- Bar Remove Button -->
+	<div class="remove-btn header-btn pull-right">
+		<a href="#" title="Close this bar" class="icon-remove"></a>
+	</div>
+
+	<!-- Purchase Button -->
+	<div class="purchase-btn header-btn pull-right">
+		<a href="#" title="Download" class="icon-cloud-download"></a>
+	</div>
+
+	<!-- Mobile Button -->
+	<div class="mobile-btn header-btn pull-right hidden-xs visible" style="opacity: 1; visibility: visible;">
+		<a href="#" title="Smartphone View" class="icon-mobile-phone"></a>
+	</div>
+
+	<!-- Tablet Button -->
+	<div class="tablet-btn header-btn pull-right hidden-xs visible" style="opacity: 1; visibility: visible;">
+		<a href="#" title="Tablet View" class="icon-tablet"></a>
+	</div>
+
+	<!-- Desktop Button -->
+	<div class="desktop-btn header-btn pull-right hidden-xs visible" style="opacity: 1; visibility: visible;">
+		<a href="#" title="Desktop View" class="icon-desktop"></a>
+	</div>
+
+
+	<!-- Header desktop -->
+	<div class="container-menu-desktop">
+		<!-- Topbar -->
+        <div class="wrap-menu-desktop">
+			<nav class="limiter-menu-desktop container">
+				
+				<!-- Logo desktop -->
+					
+				 <%= link_to image_tag("logo-01.png") , root_path, class: "logo"%>
+             
+				<!-- Menu desktop -->
+				<div class="menu-desktop">
+					<ul class="main-menu">
+						<li class="active-menu">
+							<a href="index.html">Áo</a>
+							<ul class="sub-menu">
+								<li><%= link_to "Áo Thun", line_items_path%></li>
+								<li><%= link_to "Áo Sơmi", products_path%></li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="blog.html">Đầm</a>	
+						</li>
+
+						<li>
+							<a href="blog.html">Váy</a>
+						</li>
+
+						<li>
+							<a href="blog.html">Quần</a>
+							<ul class="sub-menu">
+								<li><a href="#">Quần Dài</a></li>
+								<li><a href="#">Quần Short</a></li>
+							</ul>
+						</li>
+						<li class="label1" data-label1="hot">
+							<a href="blog.html">Sale</a>
+						</li>
+						<li>
+							<%= link_to "Thông Tin", abouts_path%>
+						</li>
+
+						<li>
+							<%= link_to "Liên Hệ", contacts_path%>
+						</li>
+					</ul>
+				</div>	
+
+				<!-- Icon header -->
+				<div class="wrap-icon-header flex-w flex-r-m h-full">
+					<div class="flex-c-m h-full p-r-5">
+						<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-5 js-show-modal-search">
+							<i class="fa fa-search"></i>
+						</div>
+					</div>
+							
+					<div class="flex-c-m h-full p-l-5 p-r-5 ">
+						<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-5 icon-header-noti js-show-cart" data-notify="2">
+							<i class="fa fa-shopping-cart"></i>
+						</div>
+					</div>		
+				</div>
+
+					<ul class="main-menu p-l-5">
+							<li >
+								<a><%= current_user.email%></a>
+								<ul class="sub-menu">
+									<li><%= link_to "Sửa Thông Tin", edit_user_registration_path %></li>
+									<li><%= link_to "Đăng Xuất", destroy_user_session_path ,method: :delete%></li>
+								</ul>
+							</li>
+				</nav>
+			</div>	
+		</div>
+
+
+		<!-- Header Mobile -->
+		<div class="wrap-header-mobile">
+
+			<!-- Logo moblie -->
+			<%= link_to image_tag("logo-01.png") , root_path, class: "logo-mobile"%>		
+			
+			<!-- Icon header -->
+			<div class="wrap-icon-header flex-w flex-r-m h-full m-r-15">
+				<div class="flex-c-m h-full p-lr-10 bor5">
+					<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 icon-header-noti js-show-cart" data-notify="2">
+						<i class="zmdi zmdi-shopping-cart"></i>
+					</div>
+				</div>
+			</div> 
+
+			<!-- Button show menu -->
+			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</div>
+		</div>	
+
+		<!-- Menu Mobile -->
+		<div class="menu-mobile">
+			<ul class="main-menu-m">
+				<li>
+					<a href="index.html">Trang Chủ</a>
+					<ul class="sub-menu-m">
+						<li><a href="index.html">Trang Chủ 1</a></li>
+						<li><a href="home-02.html">Trang Chủ 2</a></li>
+						<li><a href="home-03.html">Trang Chủ  3</a></li>
+					</ul>
+					<span class="arrow-main-menu-m">
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</span>
+				</li>
+
+				<li>
+					<%= link_to "Cửa Hàng", @stores %>
+				</li>
+
+				<li>
+					<%= link_to "Giỏ Hàng", carts_path%>
+				</li>
+
+				<li>
+					<%= link_to "Thông Tin", abouts_path%>
+				</li>
+
+				<li>
+					<%= link_to "Liên Hệ", contacts_path%>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Modal Search -->
+		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+			<div class="container-search-header">
+				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+					<img src="images/icons/icon-close2.png" alt="CLOSE">
+				</button>
+
+				<form class="wrap-search-header flex-w p-l-15">
+					<button class="flex-c-m trans-04">
+						<i class="zmdi zmdi-search"></i>
+					</button>
+					<input class="plh3" type="text" name="search" placeholder="Search...">
+				</form>
+			</div>	
+		</div>		
+	</div>
+</header>
+
+<p class="notice1"><%= notice %></p>
+
+	
+	<script>
+	var windowH = $(window).height()/2;
+
+    $(window).on('scroll',function(){
+        if ($(this).scrollTop() > windowH) {
+            $("#myBtn").css('display','flex');
+        } else {
+            $("#myBtn").css('display','none');
+        }
+    });
+
+    $('#myBtn').on("click", function(){
+        $('html, body').animate({scrollTop: 0}, 300);
+    });
+
+
+    /*==================================================================
+    [ Fixed Header ]*/
+    var headerDesktop = $('.container-menu-desktop');
+    var wrapMenu = $('.wrap-menu-desktop');
+
+    if($('.top-bar').length > 0) {
+        var posWrapHeader = $('.top-bar').height();
+    }
+    else {
+        var posWrapHeader = 0;
+    }
+    
+
+    if($(window).scrollTop() > posWrapHeader) {
+        $(headerDesktop).addClass('fix-menu-desktop');
+        $(wrapMenu).css('top',0); 
+    }  
+    else {
+        $(headerDesktop).removeClass('fix-menu-desktop');
+        $(wrapMenu).css('top',posWrapHeader - $(this).scrollTop()); 
+    }
+
+    $(window).on('scroll',function(){
+        if($(this).scrollTop() > posWrapHeader) {
+            $(headerDesktop).addClass('fix-menu-desktop');
+            $(wrapMenu).css('top',0); 
+        }  
+        else {
+            $(headerDesktop).removeClass('fix-menu-desktop');
+            $(wrapMenu).css('top',posWrapHeader - $(this).scrollTop()); 
+        } 
+    });
+
+
+    /*==================================================================
+    [ Menu mobile ]*/
+    $('.btn-show-menu-mobile').on('click', function(){
+        $(this).toggleClass('is-active');
+        $('.menu-mobile').slideToggle();
+    });
+
+    var arrowMainMenu = $('.arrow-main-menu-m');
+
+    for(var i=0; i<arrowMainMenu.length; i++){
+        $(arrowMainMenu[i]).on('click', function(){
+            $(this).parent().find('.sub-menu-m').slideToggle();
+            $(this).toggleClass('turn-arrow-main-menu-m');
+        })
+    }
+
+    $(window).resize(function(){
+        if($(window).width() >= 992){
+            if($('.menu-mobile').css('display') == 'block') {
+                $('.menu-mobile').css('display','none');
+                $('.btn-show-menu-mobile').toggleClass('is-active');
+            }
+
+            $('.sub-menu-m').each(function(){
+                if($(this).css('display') == 'block') { console.log('hello');
+                    $(this).css('display','none');
+                    $(arrowMainMenu).removeClass('turn-arrow-main-menu-m');
+                }
+            });
+                
+        }
+    });
+
+
+    /*==================================================================
+    [ Show / hide modal search ]*/
+    $('.js-show-modal-search').on('click', function(){
+        $('.modal-search-header').addClass('show-modal-search');
+        $(this).css('opacity','0');
+    });
+
+    $('.js-hide-modal-search').on('click', function(){
+        $('.modal-search-header').removeClass('show-modal-search');
+        $('.js-show-modal-search').css('opacity','1');
+    });
+
+    $('.container-search-header').on('click', function(e){
+        e.stopPropagation();
+	});
+	$('.js-show-cart').on('click',function(){
+        $('.js-panel-cart').addClass('show-header-cart');
+    });
+
+    $('.js-hide-cart').on('click',function(){
+        $('.js-panel-cart').removeClass('show-header-cart');
+	});
+	</script>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+	<script src="assets/js/products.js" type="text/javascript"></script>
+	<script src="assets/js/application.min.js" type="text/javascript"></script>
+
+	</body>
+
+
+
 
 
 
@@ -14,19 +316,20 @@
 						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Women
+									Nữ
 								</span>
 
+							
 								<span class="block1-info stext-102 trans-04">
-									Spring 2018
+									Xuân 2018
 								</span>
 							</div>
 
 							<div class="block1-txt-child2 p-b-4 trans-05">
 								<div class="block1-link stext-101 cl0 trans-09">
-									Shop Now
+									Mua ngay
 								</div>
-							</div>
+                            </div>
 						</a>
 					</div>
 				</div>
@@ -40,17 +343,17 @@
 						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Men
+									Nam
 								</span>
 
 								<span class="block1-info stext-102 trans-04">
-									Spring 2018
+									Xuân 2018
 								</span>
 							</div>
 
 							<div class="block1-txt-child2 p-b-4 trans-05">
 								<div class="block1-link stext-101 cl0 trans-09">
-									Shop Now
+									Mua ngay
 								</div>
 							</div>
 						</a>
@@ -82,7 +385,7 @@
 					</button>
 
 					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".men">
-						Nam
+					Nam
 					</button>
 				</div>
 
@@ -90,13 +393,13 @@
 					<div class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
 						<i class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>
 						<i class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-						 Filter
+						Bộ lọc
 					</div>
 
 					<div class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search">
 						<i class="icon-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-search"></i>
 						<i class="icon-close-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-						Search
+						Tìm kiếm
 					</div>
 				</div>
 				
@@ -111,48 +414,49 @@
 					</div>	
 				</div>
 
+
 				<!-- Filter -->
 				<div class="dis-none panel-filter w-full p-t-10">
 					<div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
 						<div class="filter-col1 p-r-15 p-b-27">
 							<div class="mtext-102 cl2 p-b-15">
-								Sort By
+								Sắp xếp theo
 							</div>
 
 							<ul>
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										Default
+										Mặc định
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										Popularity
+										Phổ biến
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										Average rating
+										Đánh giá trung bình
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04 filter-link-active">
-										Newness
+										Sự mới mẻ
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										Price: Low to High
+										Giá: thấp đến cao
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										Price: High to Low
+										Giá: cao đến thấp
 									</a>
 								</li>
 							</ul>
@@ -160,43 +464,43 @@
 
 						<div class="filter-col2 p-r-15 p-b-27">
 							<div class="mtext-102 cl2 p-b-15">
-								Price
+								Giá
 							</div>
 
 							<ul>
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04 filter-link-active">
-										All
+										Tất cả
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										$0.00 - $50.00
+										0 - 1.000.000 VNĐ
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										$50.00 - $100.00
+										1.000.000 - 2.000.000 VNĐ
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										$100.00 - $150.00
+										2.000.000 - 3.000.000 VNĐ
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										$150.00 - $200.00
+										3.000.000 - 4.000.000 VNĐ
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										$200.00+
+										4.000.000 VNĐ
 									</a>
 								</li>
 							</ul>
@@ -204,7 +508,7 @@
 
 						<div class="filter-col3 p-r-15 p-b-27">
 							<div class="mtext-102 cl2 p-b-15">
-								Color
+								Màu sắc
 							</div>
 
 							<ul>
@@ -214,7 +518,7 @@
 									</span>
 
 									<a href="#" class="filter-link stext-106 trans-04">
-										Black
+										Đen
 									</a>
 								</li>
 
@@ -224,7 +528,7 @@
 									</span>
 
 									<a href="#" class="filter-link stext-106 trans-04 filter-link-active">
-										Blue
+										Xanh
 									</a>
 								</li>
 
@@ -234,7 +538,7 @@
 									</span>
 
 									<a href="#" class="filter-link stext-106 trans-04">
-										Grey
+										Xám
 									</a>
 								</li>
 
@@ -244,7 +548,7 @@
 									</span>
 
 									<a href="#" class="filter-link stext-106 trans-04">
-										Green
+										Xanh lá
 									</a>
 								</li>
 
@@ -254,7 +558,7 @@
 									</span>
 
 									<a href="#" class="filter-link stext-106 trans-04">
-										Red
+										Đỏ
 									</a>
 								</li>
 
@@ -264,7 +568,7 @@
 									</span>
 
 									<a href="#" class="filter-link stext-106 trans-04">
-										White
+										Trắng
 									</a>
 								</li>
 							</ul>
@@ -272,28 +576,28 @@
 
 						<div class="filter-col4 p-b-27">
 							<div class="mtext-102 cl2 p-b-15">
-								Tags
+								Thẻ
 							</div>
 
 							<div class="flex-w p-t-4 m-r--5">
 								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Fashion
+									Thời trang
 								</a>
 
 								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Lifestyle
+									Lối sống
 								</a>
 
 								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Denim
+									Chất Denim
 								</a>
 
 								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Streetstyle
+									Phong cách đường phố
 								</a>
 
 								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Crafts
+									Đồ thủ công
 								</a>
 							</div>
 						</div>
@@ -337,7 +641,7 @@
 			<!-- Load more -->
 			<div class="flex-c-m flex-w w-full p-t-45">
 				<a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-					xEM THÊM
+					XEM THÊM
 				</a>
 			</div>
 		</div>
@@ -406,31 +710,31 @@
 						</div>
 					</div>
 					
-					<div class="col-md-6 col-lg-5 p-b-30">
+					div class="col-md-6 col-lg-5 p-b-30">
 						<div class="p-r-50 p-t-5 p-lr-0-lg">
 							<h4 class="mtext-105 cl2 js-name-detail p-b-14">
-								Lightweight Jacket
+								Áo khoác xanh nhạt
 							</h4>
 
 							<span class="mtext-106 cl2">
-								$58.79
+								1.369.000 VNĐ
 							</span>
 
 							<p class="stext-102 cl3 p-t-23">
-								Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
+								Áo khoác bằng vải pha sợi linen. Cổ tròn, dài tay. Có các đường may nổi ở vai. Có túi may viền hai bên hông. Gấu bo vải gân. Cài bằng nút ở phía trước.
 							</p>
 							
 							<!--  -->
 							<div class="p-t-33">
 								<div class="flex-w flex-r-m p-b-10">
 									<div class="size-203 flex-c-m respon6">
-										Size
+										Kích cỡ
 									</div>
 
 									<div class="size-204 respon6-next">
 										<div class="rs1-select2 bor8 bg0">
 											<select class="js-select2" name="time">
-												<option>Choose an option</option>
+												<option>Chọn một sự lựa chọn</option>
 												<option>Size S</option>
 												<option>Size M</option>
 												<option>Size L</option>
@@ -443,24 +747,24 @@
 
 								<div class="flex-w flex-r-m p-b-10">
 									<div class="size-203 flex-c-m respon6">
-										Color
+										Màu sắc
 									</div>
 
 									<div class="size-204 respon6-next">
 										<div class="rs1-select2 bor8 bg0">
 											<select class="js-select2" name="time">
-												<option>Choose an option</option>
-												<option>Red</option>
-												<option>Blue</option>
-												<option>White</option>
-												<option>Grey</option>
+												<option>Chọn một sự lựa chọn</option>
+												<option>Đỏ</option>
+												<option>Xanh</option>
+												<option>Trắng</option>
+												<option>Xám</option>
 											</select>
 											<div class="dropDownSelect2"></div>
 										</div>
 									</div>
 								</div>
 
-								<div class="flex-w flex-r-m p-b-10">
+								<<div class="flex-w flex-r-m p-b-10">
 									<div class="size-204 flex-w flex-m respon6-next">
 										<div class="wrap-num-product flex-w m-r-20 m-tb-10">
 											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">

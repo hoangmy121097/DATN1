@@ -1,68 +1,18 @@
 
-<!--<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="limiter">
-  <div class="container-login100">
-    <div class="wrap-login100">
-       <form class="login100-form validate-form">
-        <span class="login100-form-title">
-          <b>ĐĂNG NHẬP</b></br>
-        </span>
-        <div class="textwarning">
-            <div id="hide"><p class="notice"><%= notice %></p></div>
-            <p class="alert"><%= alert %></p>
-          </div>
-
-        <div class="wrap-input100 validate-input">
-          <span class="focus-input100" ></span>
-          <%= f.label :email %>
-          <div class="input_login"><%= f.email_field :email, autofocus: true, autocomplete: "email" %></div>
-        </div>
-
-        <div class="wrap-input100 validate-input">
-          <span class="focus-input100"></span>
-          <%= f.label :password %>
-          <div class="input_login"><%= f.password_field :password, autocomplete: "current-password" %></div>
-        </div>
-
-          <% if devise_mapping.rememberable? %>
-          <div class="field" style={background_color:} >
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
-          </div>
-        <% end %>
     
-
-          <div class="container-login100-form-btn">
-            <%= f.submit "Log in", class:"login100-form-btn" %>
-          </div>
-         <div class="container-login100-form-btn">
-            <%= link_to "Sign up", new_registration_path(resource_name) %>
-          </div>
-          <div class="forgotpass">
-            <%= link_to "Forgot your password?", new_password_path(resource_name) %>
-          </div>
-
-        </form>
-        </div>
-        </div>
-        </div>
-       
-      <% end %>-->
-      
-
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="limiter">
+<div class="limiter">
   <div class="container-login100">
     <div class="wrap-login100">
        <form class="login100-form validate-form">
         <span class="login100-form-title">
-          <b>ĐĂNG NHẬP</b></br>
+        <b>ĐĂNG NHẬP</b></br>
         </span>
+
         <div class="textwarning">
             <div id="hide"><p class="notice"><%= notice %></p></div>
             <p class="alert"><%= alert %></p>
-          </div>
+        </div>
 
         <div class="wrap-input100 validate-input">
           <span class="focus-input100" ></span>
@@ -72,45 +22,35 @@
 
         <div class="wrap-input100 validate-input">
           <span class="focus-input100"></span>
-          <%= f.label :password %>
+          <%= f.label :password, 'Mật Khẩu' %>
           <div class="input_login"><%= f.password_field :password, autocomplete: "current-password" %></div>
         </div>
+        
+        <% if devise_mapping.rememberable? -%>
+            <%= f.check_box :remember_me, class: "input-checkbox" %>
+            <%= f.label :remember_me,'Lưu mật khẩu', class: "label-checkbox" %>
+        <% end -%>
 
-          <% if devise_mapping.rememberable? %>
-          <div class="rememberme">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
-          </div>
-        <% end %>
-    
 
-          <div class="container-login100-form-btn">
-            <%= f.submit "Log in", class:"login100-form-btn" %>
+        <div class="container-login100-form-btn">
+          <%= f.submit "Đăng Nhập", class:"login100-form-btn" %>
           </div>
-         <div class="container-login100-form-btn">
-            <%= link_to "Sign up", new_registration_path(resource_name) %>
-          </div>
-          <div class="forgotpass">
-            <%= link_to "Forgot your password?", new_password_path(resource_name) %>
-          </div>
-
-      
-       
-			
-          
-
-<!-----Test thử----->
-      <!--<div class="actions">
-          <%= f.submit "Log in" %>
+        <div class="container-login100-form-btn">
+          <%= link_to "Đăng Kí", new_registration_path(resource_name) %>
         </div>
-        -->
+        <div class="forgotpass">
+          <%= link_to "Bạn quên mật khẩu", new_password_path(resource_name) %>
+        </div>
       
 
         </form>
-        </div>
-        </div>
-        </div>
-       
-      <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
       
-<!--<%= render "devise/shared/links" %>-->
+<script>
+  setTimeout(function(){
+    $('#hide').fadeOut(); 
+  }, 3000);
+</script>

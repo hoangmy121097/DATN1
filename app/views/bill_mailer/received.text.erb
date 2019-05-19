@@ -1,0 +1,10 @@
+Dear <%= @bill.customer_name %>
+
+Cảm ơn bạn đã đặt hàng gần đây từ COZA STORE.
+
+Bạn đã đặt hàng các mặt hàng sau:
+
+<%= render @bill.line_items -%>
+
+
+Chúng tôi sẽ gửi cho bạn một email riêng khi đơn đặt hàng của bạn được giao.

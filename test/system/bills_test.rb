@@ -18,6 +18,7 @@ class BillsTest < ApplicationSystemTestCase
     fill_in "Customer name", with: @bill.customer_name
     fill_in "Customer phone", with: @bill.customer_phone
     fill_in "Delivery date", with: @bill.delivery_date
+    fill_in "Email", with: @bill.email
     fill_in "Status pay", with: @bill.status_pay
     click_on "Create Bill"
 
@@ -33,6 +34,7 @@ class BillsTest < ApplicationSystemTestCase
     fill_in "Customer name", with: @bill.customer_name
     fill_in "Customer phone", with: @bill.customer_phone
     fill_in "Delivery date", with: @bill.delivery_date
+    fill_in "Email", with: @bill.email
     fill_in "Status pay", with: @bill.status_pay
     click_on "Update Bill"
 

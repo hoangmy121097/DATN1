@@ -33,7 +33,7 @@ class BillsController < ApplicationController
       if @bill.save
         Cart.destroy(session[:cart_id]) 
         session[:cart_id] = nil
-        BillMailer.received(@order).deliver_later
+        BillMailer.received(@bill).deliver_later
         format.html { redirect_to store_index_url, notice: 'Cảm ơn bạn đã đặt hàng!' }
         format.json { render :show, status: :created, location: @bill }
       else
@@ -75,8 +75,9 @@ class BillsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bill_params
-      params.require(:bill).permit(:customer_name, :customer_address, :customer_phone, :delivery_date, :status_pay)
+      params.require(:bill).permit(:customer_name, :customer_address, :customer_phone, :email, :delivery_date, :status_pay)
     end
+
     private
     def ensure_cart_isnt_empty
       if @cart.line_items.empty?

@@ -4,12 +4,14 @@ one:
   customer_name: MyText
   customer_address: MyText
   customer_phone: MyText
-  delivery_date: 2019-05-18 21:22:19
+  email: MyText
+  delivery_date: 2019-05-19 00:21:56
   status_pay: MyText
 
 two:
   customer_name: MyText
   customer_address: MyText
   customer_phone: MyText
-  delivery_date: 2019-05-18 21:22:19
+  email: MyText
+  delivery_date: 2019-05-19 00:21:56
   status_pay: MyText
