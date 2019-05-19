@@ -169,15 +169,13 @@
 		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
 			<div class="container-search-header">
 				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-					<img src="images/icons/icon-close2.png" alt="CLOSE">
+					<%= link_to image_tag("icon-close2.png")%>
+                    
 				</button>
-
-				<form class="wrap-search-header flex-w p-l-15">
-					<button class="flex-c-m trans-04">
-						<i class="zmdi zmdi-search"></i>
-					</button>
-					<input class="plh3" type="text" name="search" placeholder="Search...">
-				</form>
+                <%= form_tag products_path,class: "wrap-search-header flex-w p-l-1", method: :get do %>
+                <%= text_field_tag 'term',params[:item], class: "plh3" , placeholder: "Nhập tên sản phẩm cần tìm" %>
+                <%= submit_tag 'Tìm Kiếm',class:"flex-c-m trans-03"  %>
+                <% end %>
 			</div>	
 		</div>		
 	</div>
@@ -640,9 +638,7 @@
 
 			<!-- Load more -->
 			<div class="flex-c-m flex-w w-full p-t-45">
-				<a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-					XEM THÊM
-				</a>
+                    <%= paginate @products, theme: 'twitter-bootstrap-3' %>
 			</div>
 		</div>
 	</section>
@@ -3907,20 +3903,3 @@
 
 
 
-<h1>Your Pragmatic Catalog</h1>
-<% cache @products do %>
-    <% @products.each do |product| %>
-        <% cache @products do %>
-            
-            <div class="entry">
-                <%= image_tag(product.image_url, class: 'list_image') %>
-                <h3><%= link_to product.title, product %></h3><br/>
-                <%= sanitize(product.description) %>
-                <div class="price_line">
-                    <span class="price"><%= number_to_currency(product.price) %></span>
-                    <%= button_to 'Thêm vào giỏ hàng', line_items_path(product_id: product),:remote => true %>
-                </div>
-            </div>
-        <% end %>
-    <% end %>
-<% end %>

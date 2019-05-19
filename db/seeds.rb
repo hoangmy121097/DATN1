@@ -48,7 +48,7 @@ Product.create(
     description:%{<p><em>Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.</p>},
     image_url: 'product-10.jpg',
     price: 42.00)
-    Product.create(
+Product.create(
     title: 'Pretty Little Thing',
     description:%{<p><em>Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.</p>},
     image_url: 'product-11.jpg',

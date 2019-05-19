@@ -74,3 +74,4 @@ gem 'kaminari'
 gem 'ransack' 
 gem 'bootstrap-kaminari-views'
 gem "select2-rails"
+gem 'pg_search'

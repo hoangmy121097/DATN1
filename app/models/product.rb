@@ -1,4 +1,11 @@
 class Product < ApplicationRecord
+    include PgSearch
+    pg_search_scope :search_by_full_name, against: [:title],
+    using: {            
+      tsearch: {
+        prefix: true
+      }
+    }
     has_many :line_items
     has_many :orders, through: :line_items
     before_destroy :ensure_not_referenced_by_any_line_item
@@ -10,6 +17,7 @@ class Product < ApplicationRecord
     with: %r{\.(gif|jpg|png)\Z}i,
     message: 'must be a URL for GIF, JPG or PNG image.'
     }
+    
 
     private
     def ensure_not_referenced_by_any_line_item
