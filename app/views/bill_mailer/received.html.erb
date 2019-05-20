@@ -1,7 +1,16 @@
-<%= @bill.customer_name %> thân mến!
+<h3>COZA Store</h3>
 <p>
-Cảm ơn bạn đã đặt hàng gần đây từ COZA STORE.
+    <%= @bill.customer_name %> thân mến!</b>,
 </p>
+<p>
 Bạn đã đặt hàng các mặt hàng sau:
-
-<%= render @bill.line_items -%>
+</p>
+<table>
+    <tr>
+        <th colspan="2">Sản phẩm</th>
+        <th>Đơn giá</th>
+    </tr>
+    <%= render @bill.line_items %>
+</table>
+ 
+<p>Cảm ơn bạn đã mua sắm ở <b>COZA Store<b>!</p>

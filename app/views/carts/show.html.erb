@@ -34,7 +34,7 @@
 											</div>
 										</div>
 									</td>
-                                    <td class="column-5">$ <%= item.product.price * item.quantity%></td>
+                                    <td class="column-5"><%= item.product.price * item.quantity%> VNĐ</td>
                                     <td class='icon-header-item cl2 hov-cl1 trans-04 p-lr-5'>
                                     <%= link_to 'Xoá', item, method: :delete, data: { confirm: 'Bạn có chắc?' } %>
                                     </td>
@@ -57,11 +57,27 @@
 							<div class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
 								Cập nhật giỏ hàng
 							</div>
+
+							<div class="flex-w flex-t bor12 p-b-13">
+								<div class="size-208">
+									<span class="stext-110 cl2">
+										Tổng tiền:
+									</span>
+								</div>
+
+								<div class="size-209">
+									<span class="mtext-110 cl2">
+										<%= @cart.total_price %>
+									</span>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-				<%= button_to "Thanh toán", new_bill_path, method: :get %>
 
+				
+
+				<%= button_to "Thanh toán", new_bill_path, method: :get %>
 				<%= button_to "Thanh toán", new_bill_path, method: :get, class: "flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer" %>
 
 			</div>
