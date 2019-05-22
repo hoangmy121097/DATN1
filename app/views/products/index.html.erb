@@ -46,38 +46,37 @@
 			<div class="menu-desktop">
 				<ul class="main-menu">
 					<li class="active-menu">
-						<a href="index.html">Áo</a>
+						<%= link_to "Áo", products_path%>
 						<ul class="sub-menu">
-							<li><%= link_to "Áo Thun", line_items_path%></li>
+							<li><%= link_to "Áo Thun", products_path%></li>
 							<li><%= link_to "Áo Sơmi", products_path%></li>
 						</ul>
 					</li>
 
 					<li>
-						<a href="blog.html">Đầm</a>	
-					</li>
+                        <%= link_to "Đầm", products_path%>
+                    </li>
 
-					<li>
-						<a href="blog.html">Váy</a>
-					</li>
+				    <li>
+					    <%= link_to "Váy", products_path%>
+				    </li>
 
-					<li>
-						<a href="blog.html">Quần</a>
-						<ul class="sub-menu">
-							<li><a href="#">Quần Dài</a></li>
-							<li><a href="#">Quần Short</a></li>
-						</ul>
+					<li class="active-menu">
+					    <%= link_to "Quần", products_path%>
+                        <ul class="sub-menu-m">
+                            <li><%= link_to "Quần Dài", products_path%></li>
+                            <li><%= link_to "Quần Short", products_path%></li>
+					    </ul>
 					</li>
 					<li class="label1" data-label1="hot">
-						<a href="blog.html">Sale</a>
-					</li>
-					<li>
-						<%= link_to "Thông Tin", abouts_path%>
-					</li>
-
-					<li>
-						<%= link_to "Liên Hệ", contacts_path%>
-					</li>
+                        <%= link_to "Sale", products_path%>
+                    </li>
+                    <li>
+                        <%= link_to "Thông Tin", abouts_path%>
+                    </li>
+                    <li>
+                        <%= link_to "Liên Hệ", contacts_path%>
+                    </li>
 				</ul>
 			</div>	
 
@@ -104,9 +103,10 @@
 								<li><%= link_to "Đăng Xuất", destroy_user_session_path ,method: :delete%></li>
 							</ul>
 						</li>
-			</nav>
-		</div>	
-	</div>
+				</ul>
+		</nav>
+	</div>	
+</div>
 
 
 	<!-- Header Mobile -->
@@ -134,36 +134,47 @@
 
 	<!-- Menu Mobile -->
 	<div class="menu-mobile">
-		<ul class="main-menu-m">
-			<li>
-				<a href="index.html">Trang Chủ</a>
-				<ul class="sub-menu-m">
-					<li><a href="index.html">Trang Chủ 1</a></li>
-					<li><a href="home-02.html">Trang Chủ 2</a></li>
-					<li><a href="home-03.html">Trang Chủ  3</a></li>
-				</ul>
-				<span class="arrow-main-menu-m">
-					<i class="fa fa-angle-right" aria-hidden="true"></i>
-				</span>
-			</li>
+			<ul class="main-menu-m">
+				<li>
+					<%= link_to "Áo", products_path%>
+					<ul class="sub-menu-m">
+						<li><%= link_to "Áo Thun", products_path%></li>
+                        <li><%= link_to "Áo Sơmi", products_path%></li>
+					</ul>
+					<span class="arrow-main-menu-m">
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</span>
+				</li>
 
-			<li>
-				<%= link_to "Cửa Hàng", @stores %>
-			</li>
+				<li>
+					<%= link_to "Đầm", products_path%>
+				</li>
 
-			<li>
-				<%= link_to "Giỏ Hàng", carts_path%>
-			</li>
+				<li>
+					<%= link_to "Váy", products_path%>
+				</li>
 
-			<li>
-				<%= link_to "Thông Tin", abouts_path%>
-			</li>
-
-			<li>
-				<%= link_to "Liên Hệ", contacts_path%>
-			</li>
-		</ul>
-	</div>
+				<li>
+					<%= link_to "Quần", products_path%>
+                    <ul class="sub-menu-m">
+						<li><%= link_to "Quần Dài", products_path%></li>
+                        <li><%= link_to "Quần Short", products_path%></li>
+					</ul>
+					<span class="arrow-main-menu-m">
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</span>
+				</li>
+                <li>
+                    <%= link_to "Sale", products_path%>
+                </li>
+                <li>
+					<%= link_to "Thông Tin", abouts_path%>
+				</li>
+				<li>
+					<%= link_to "Liên Hệ", contacts_path%>
+				</li>
+			</ul>
+		</div>
 
 	<!-- Modal Search -->
 	<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
@@ -313,12 +324,20 @@ $('.js-hide-cart').on('click',function(){
 				Tất Cả
 				</button>
 
-				<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".women">
-				Nữ
+				<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".ao">
+				Áo
 				</button>
 
-				<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".men">
-					Nam
+				<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".dam">
+				Đầm
+				</button>
+
+                <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".vay">
+				Váy
+				</button>
+
+				<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".quan">
+				Quần
 				</button>
 			</div>
 
@@ -449,7 +468,7 @@ $('.js-hide-cart').on('click',function(){
 					</div>
 				</div>
 				
-				div class="col-md-6 col-lg-5 p-b-30">
+				<div class="col-md-6 col-lg-5 p-b-30">
 					<div class="p-r-50 p-t-5 p-lr-0-lg">
 						<h4 class="mtext-105 cl2 js-name-detail p-b-14">
 							Áo khoác xanh nhạt
@@ -503,7 +522,7 @@ $('.js-hide-cart').on('click',function(){
 								</div>
 							</div>
 
-							<<div class="flex-w flex-r-m p-b-10">
+							<div class="flex-w flex-r-m p-b-10">
 								<div class="size-204 flex-w flex-m respon6-next">
 									<div class="wrap-num-product flex-w m-r-20 m-tb-10">
 										<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
