@@ -129,9 +129,10 @@ iframe {
 
 .forgotpass{
   font-family: Poppins-Bold;
-  color: #333333;
+  color: #c80000;
   line-height: 1.2;
   text-align: center;
+  
 
   width: 100%;
   display: block;
@@ -299,7 +300,7 @@ iframe {
 .label-checkbox {
   font-family: Ubuntu-Regular;
   font-size: 16px;
-  color: #999999;
+  color: #666666;
   line-height: 1.2;
 
   display: block;
@@ -326,7 +327,7 @@ iframe {
   height: 18px;
   border-radius: 3px;
   background: #fff;
-  border: 2px solid #999999;
+  border: 2px solid #666666;
   left: 0;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -337,7 +338,7 @@ iframe {
 }
 
 .input-checkbox:checked + .label-checkbox::before {
-  color: #999999;
+  color: #666666;
 }
 
 
@@ -418,6 +419,7 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
 
+
 }
 
 .login100-form-btn {
@@ -449,7 +451,13 @@ iframe {
 .login100-form-btn:hover {
   background: #0c7c12;
 }
-
+.login100-form-btn-text {
+  font-family: Montserrat-Bold;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #c80000;
+  text-transform: uppercase;
+}
 
 
 /*------------------------------------------------------------------
