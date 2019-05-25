@@ -1,6 +1,6 @@
 class Bill < ApplicationRecord
     has_many :line_items, dependent: :destroy
-    validates :customer_name, :customer_address, :delivery_date, :email, presence: true
+    validates :customer_name, :customer_address, :email, presence: true
     
 
     def add_line_items_from_cart(cart)
