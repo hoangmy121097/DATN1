@@ -20,7 +20,7 @@
 										</div>
 									</td>
 									<td class="column-2"><%= item.product.title %></td>
-									<td class="column-3"><%= item.product.price %></td>
+									<td class="column-3"><%= number_to_currency(item.product.price) %></td>
 									<td class="column-4">
 										<div class="wrap-num-product flex-w m-l-auto m-r-0">
 											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
@@ -34,9 +34,9 @@
 											</div>
 										</div>
 									</td>
-                                    <td class="column-5"><%= item.product.price * item.quantity%> VNĐ</td>
+                                    <td class="column-5"><% number_to_currency(item.total_price) %></td>
                                     <td class='icon-header-item cl2 hov-cl1 trans-04 p-lr-5'>
-                                    <%= link_to 'Xoá', item, method: :delete, data: { confirm: 'Bạn có chắc muốn xoá?' } %>
+                                    <%= link_to 'Xoá', item, method: :delete, data: { confirm: 'Bạn có muốn xóa sản phầm naỳ?' } %>
                                     </td>
                                 </tr>
                                 <% end %>
@@ -67,7 +67,7 @@
 
 								<div class="size-209">
 									<span class="mtext-110 cl2">
-										<%= @cart.total_price %>
+									<%= number_to_currency(@cart.total_price) %>
 									</span>
 								</div>
 							</div>

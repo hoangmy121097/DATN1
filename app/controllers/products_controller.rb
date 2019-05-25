@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
 
   # GET /products
   # GET /products.json
+
   def index
     @products = Product.all.page(params[:page]).per(8)
     if params[:term]
@@ -11,7 +12,6 @@ class ProductsController < ApplicationController
       @products = Product.all
     end
   end
-
   # GET /products/1
   # GET /products/1.json
   def show
@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    @product = Product.new
+    @product = Product.new @product_type = ProductType.all.map{|c| [ c.name, c.id ] }
   end
 
   # GET /products/1/edit
@@ -35,6 +35,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
+    @product.product_type_id = params[:product_type_id] 
 
     respond_to do |format|
       if @product.save

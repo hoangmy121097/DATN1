@@ -41,6 +41,8 @@
     <%= form.text_field :price %>
   </div>
 
+  <%= select_tag(:category_id, options_for_select(@product_type), :prompt => “Select one!”) %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

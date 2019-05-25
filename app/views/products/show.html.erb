@@ -1,3 +1,114 @@
+<!-- Header -->
+    <header class="header-v2">
+
+	<!-- Product Switcher -->
+	<!--<div class="product-switcher pull-left">
+		<a href="#" title="Select a Product">Coza Store <span class="badge">Template</span></a>
+	</div> -->
+
+	<!-- Bar Remove Button -->
+	<div class="remove-btn header-btn pull-right">
+		<a href="#" title="Close this bar" class="icon-remove"></a>
+	</div>
+
+	<!-- Purchase Button -->
+	<div class="purchase-btn header-btn pull-right">
+		<a href="#" title="Download" class="icon-cloud-download"></a>
+	</div>
+
+	<!-- Mobile Button -->
+	<div class="mobile-btn header-btn pull-right hidden-xs visible" style="opacity: 1; visibility: visible;">
+		<a href="#" title="Smartphone View" class="icon-mobile-phone"></a>
+	</div>
+
+	<!-- Tablet Button -->
+	<div class="tablet-btn header-btn pull-right hidden-xs visible" style="opacity: 1; visibility: visible;">
+		<a href="#" title="Tablet View" class="icon-tablet"></a>
+	</div>
+
+	<!-- Desktop Button -->
+	<div class="desktop-btn header-btn pull-right hidden-xs visible" style="opacity: 1; visibility: visible;">
+		<a href="#" title="Desktop View" class="icon-desktop"></a>
+	</div>
+
+
+  <!-- Header desktop -->
+	<div class="container-menu-desktop">
+		<!-- Topbar -->
+        <div class="wrap-menu-desktop">
+			<nav class="limiter-menu-desktop container">
+				
+				<!-- Logo desktop -->
+					
+				 <%= link_to image_tag("logo-01.png") , root_path, class: "logo"%>
+             
+				<!-- Menu desktop -->
+				<div class="menu-desktop">
+					<ul class="main-menu">
+						<li class="active-menu">
+                            <a href="/product_types/21"> Aó </a>                            
+							<ul class="sub-menu">
+								<li><%= link_to "Áo Thun", line_items_path%></li>
+								<li><%= link_to "Áo Sơmi", products_path%></li>
+							</ul>
+                    </li>
+
+                  <li>
+                      <a href="/product_types/26"> Đầm </a>
+                  </li>
+
+                  <li>
+                          <a href="#">Váy</a>
+                  </li>
+
+                  <li>
+                            <a href="/product_types/28"> Quần </a>
+							<ul class="sub-menu">
+								<li><a href="#">Quần Dài</a></li>
+								<li><a href="#">Quần Short</a></li>
+							</ul>
+						</li>
+						<li class="label1" data-label1="hot">
+							<a href="#">Sale</a>
+						</li>
+						<li>
+							<%= link_to "Thông Tin", abouts_path%>
+						</li>
+
+						<li>
+							<%= link_to "Liên Hệ", contacts_path%>
+						</li>
+					</ul>
+				</div>	
+
+				<!-- Icon header -->
+				<div class="wrap-icon-header flex-w flex-r-m h-full">
+					<div class="flex-c-m h-full p-r-5">
+						<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-5 js-show-modal-search">
+							<i class="fa fa-search"></i>
+						</div>
+					</div>
+							
+					<div class="flex-c-m h-full p-l-5 p-r-5 ">
+						<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-5 icon-header-noti js-show-cart" data-notify="2">
+							<i class="fa fa-shopping-cart"></i>
+						</div>
+					</div>		
+				</div>
+
+					<ul class="main-menu p-l-5">
+							<li >
+								<a><%= current_user.email%></a>
+								<ul class="sub-menu">
+									<li><%= link_to "Sửa Thông Tin", edit_user_registration_path %></li>
+									<li><%= link_to "Đăng Xuất", destroy_user_session_path ,method: :delete%></li>
+								</ul>
+							</li>
+				</nav>
+			</div>	
+		</div>
+
+
 <body class="animsition">
 	
 
@@ -31,7 +142,7 @@
 						</h4>
 
 						<span class="mtext-106 cl2">
-							<%= @product.price %>
+							<%= number_to_currency(@product.price) %>
 						</span>
 
 						<p class="stext-102 cl3 p-t-23">
@@ -820,7 +931,7 @@
 		$('.js-addcart-detail').each(function(){
 			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
 			$(this).on('click', function(){
-				swal(nameProduct, "is added to cart !", "success");
+				swal(nameProduct, "đã được thêm vào giỏ hàng!", "success");
 			});
 		});
 	

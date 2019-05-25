@@ -1,3 +1,4 @@
+<%= number_to_currency(@product) %>
     <!-- Header -->
     <header class="header-v2">
 
@@ -46,37 +47,38 @@
 				<div class="menu-desktop">
 					<ul class="main-menu">
 						<li class="active-menu">
-							<%= link_to "Áo", products_path%>
+                            <a href="product_types/1"> Aó </a>                            
 							<ul class="sub-menu">
 								<li><%= link_to "Áo Thun", products_path%></li>
 								<li><%= link_to "Áo Sơmi", products_path%></li>
 							</ul>
+                        </li>
+
+						<li>
+                            <a href="product_types/2"> Đầm </a>
 						</li>
 
 						<li>
-                            <%= link_to "Đầm", products_path%>
-                        </li>
+                            <a href="product_types/3">Váy</a>
+						</li>
 
-				        <li>
-					        <%= link_to "Váy", products_path%>
-				        </li>
+						<li>
+                            <a href="product_types/4"> Quần </a>
+							<ul class="sub-menu">
+								<li><a href="#">Quần Dài</a></li>
+								<li><a href="#">Quần Short</a></li>
+							</ul>
+						</li>
+						<li class="label1" data-label1="hot">
+							<a href="#">Sale</a>
+						</li>
+						<li>
+							<%= link_to "Thông Tin", abouts_path%>
+						</li>
 
-						<li class="active-menu">
-					        <%= link_to "Quần", products_path%>
-                            <ul class="sub-menu">
-                                <li><%= link_to "Quần Dài", products_path%></li>
-                                <li><%= link_to "Quần Short", products_path%></li>
-					        </ul>
-                        </li>
-                        <li class="label1" data-label1="hot">
-                            <%= link_to "Sale", products_path%>
-                        </li>
-                        <li>
-                            <%= link_to "Thông Tin", abouts_path%>
-                        </li>
-                        <li>
-                            <%= link_to "Liên Hệ", contacts_path%>
-                        </li>
+						<li>
+							<%= link_to "Liên Hệ", contacts_path%>
+						</li>
 					</ul>
 				</div>	
 
@@ -135,7 +137,7 @@
 		<div class="menu-mobile">
 			<ul class="main-menu-m">
 				<li>
-					<%= link_to "Áo", products_path%>
+                    <a href="product_types/21"> Aó </a>  
 					<ul class="sub-menu-m">
 						<li><%= link_to "Áo Thun", products_path%></li>
                         <li><%= link_to "Áo Sơmi", products_path%></li>
@@ -146,15 +148,15 @@
 				</li>
 
 				<li>
-					<%= link_to "Đầm", products_path%>
+                    <a href="product_types/26"> Đầm </a>  
 				</li>
 
 				<li>
-					<%= link_to "Váy", products_path%>
+                    <a href="#"> Váy </a>  
 				</li>
 
 				<li>
-					<%= link_to "Quần", products_path%>
+                    <a href="product_types/28"> Quần </a>  
                     <ul class="sub-menu-m">
 						<li><%= link_to "Quần Dài", products_path%></li>
                         <li><%= link_to "Quần Short", products_path%></li>
@@ -316,7 +318,7 @@
 					<!-- Block1 -->
 					<div class="block1 wrap-pic-w">
 						<%= image_tag('banner-01.jpg') %>
-						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+						<a href="#" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
 									Áo
@@ -345,7 +347,7 @@
 						
 						<%= image_tag('banner-12.jpg') %>
 
-						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+						<a href="#" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
 									Đầm
@@ -619,36 +621,33 @@
 
 			<div class="row container" style="box-sizing: border-box">
 			<% @products.each do |product| %>
-			<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
-					<div class="block2">
-						<div class="block2-pic hov-img0">
-						<%= image_tag(product.image_url, class: 'list_image')%>
-                            <%= button_to 'Thêm vào giỏ hàng', line_items_path(product_id: product),:remote => true, class: 'block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1' %>
-						</div>
-                        
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+                        <div class="block2">
+                            <div class="block2-pic hov-img0">
+                            <%= image_tag(product.image_url, class: 'list_image')%>
+                                <%= button_to 'Thêm vào giỏ hàng', line_items_path(product_id: product),:remote => true, class: 'block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1' %>
+                            </div>
 
-						<div class="block2-txt flex-w flex-t p-t-14">
-							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                    <%= link_to product.title, product %>
-								</a>
+                            <div class="block2-txt flex-w flex-t p-t-14">
+                                <div class="block2-txt-child1 flex-col-l ">
+                                    <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                        <%= link_to product.title, product %>
+                                    </a>
 
-								<span class="stext-105 cl3">
-								<%= product.price %>
-								</span>
-							</div>
+                                    <span class="stext-105 cl3">
+                                        <%= number_to_currency(product.price) %>
+                                    </span>
+                                </div>
 
-							<div class="block2-txt-child2 flex-r p-t-3">
-								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<% end %>
-			</div>
-
-				
+                                <div class="block2-txt-child2 flex-r p-t-3">
+                                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% end %>
+                </div>	
 			</div>
 
 			<!-- Load more -->
@@ -3914,8 +3913,4 @@
     };
 
 }));
-	</script>
-
-<!--===============================================================================================-->
-
-
+</script>

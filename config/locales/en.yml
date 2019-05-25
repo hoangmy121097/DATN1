@@ -47,3 +47,13 @@ en:
           other: "Displaying <b>all %{count}</b> %{entry_name}"
       more_pages:
         display_entries: "Displaying %{entry_name} <b>%{first} - %{last}</b> of <b>%{total}</b> in total"
+  number:
+    currency:
+      format:
+        delimiter: ","                  
+        format: "%n %u"             
+        precision: 0      
+        separator: "."      
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "VNĐ"
