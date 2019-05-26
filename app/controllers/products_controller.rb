@@ -7,9 +7,9 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all.page(params[:page]).per(8)
     if params[:term]
-      @products = Product.search_by_full_name(params[:term])
+      @products = Product.search_by_full_name(params[:term]).page(params[:page]).per(8)
     else
-      @products = Product.all
+      @products = Product.all.page(params[:page]).per(8)
     end
   end
   # GET /products/1

@@ -1,41 +1,4 @@
-/*------------------------------------------------------------------
-Project:  
-Version:  
-Last change:  
-Assigned to:  Le Xuan Bach
-Primary use:  Company
--------------------------------------------------------------------*/
-/*------------------------------------------------------------------
-[LAYOUT]
-
-* body
-  + Header / header
-  + Page Content / .page-content .name-page
-        + Section Layouts / section .name-section
-        ...
-  + Footer / footer
-
--------------------------------------------------------------------*/
-/*------------------------------------------------------------------
-[COLOR CODES]
-
-# Text Color      :  
-# Primary Color 01:  
-# Primary Color 02:   
-# Primary Color 03:  
-
-------------------------------------------------------------------*/
-/*------------------------------------------------------------------
-[TYPOGRAPHY]
-
-Body            : 16px/1.6 '', Arial, sans-serif;
-Title           : 18px/1.6 '', Arial, sans-serif;
-Paragrap        : 18px/1.6 '', Arial, sans-serif;
-Input, textarea : 14px/1.6 '', Arial, sans-serif;
--------------------------------------------------------------------*/
-
-
-
+@import "bootstrap";
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 @font-face {
@@ -1453,7 +1416,6 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     }
     
     .arrow-slick3:hover {
-      background-color: rgba(0,0,0,0.9);
     }
     
     .prev-slick3 {left: 0px;}
@@ -1507,7 +1469,6 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     [ RS Magnific-Popup ]*/
     .mfp-bg {
       z-index: 10000;
-      background-color: #000;
       opacity: 0.9;
     }
     
