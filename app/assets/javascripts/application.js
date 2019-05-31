@@ -31,6 +31,7 @@
 //= require sweetalert.min
 //= require select2
 //= require jquery.slick
+//= require main
 
 
 
